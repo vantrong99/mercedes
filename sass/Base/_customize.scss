@@ -1,0 +1,32 @@
+#myModal {
+    .modal-header{
+        border-bottom: none;
+    }
+    .modal-body {
+        padding: $pd-1 $pd-2 - 10;
+        ul{
+            margin-bottom: $mg-4;
+            letter-spacing: 1px;
+            a{
+                @include styleText($color-black-2, $fs-1, $fw-normal);
+            }
+            a.active{
+                @include styleText($color-blue-0, $fs-1, $fw-normal);
+            }
+        }
+        #myTabContent{
+            .brandhub-legal-headline p{
+                @include styleText($color-black-2, $fs-2, $fw-bold-0);
+            }
+            .brandhub-legal-text p{
+                @include styleText($color-black-2, $fs-1, $fw-normal);
+            }
+        }
+    }
+}
+
+@include responsive("large"){
+    .modal-dialog{
+        max-width: 90%;
+    }
+}

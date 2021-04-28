@@ -1,0 +1,203 @@
+.stay {
+    // background-color: $color-black-0;
+    @include styleText($color-gray-0, 13.4px, $fw-normal);
+    .stay__content {
+        width: calc(100% - 60px);
+        margin-left: auto;
+        margin-right: auto;
+        h3 {
+            @include styleText($color-white-0, $fs-5,$fw-normal);
+            font-family: 'Roboto', serif;
+            margin-bottom: $mg-3;
+        }
+        .stay__contact {
+            border-top: 1px solid #636363;
+            border-bottom: 1px solid #636363;
+            padding-top: 30px;
+            padding-bottom: $pd-3;
+            .row {
+                width: 100%;
+                margin: 0px;
+                .col-xl-6 {
+                    .form {
+                        margin-top: $mg-2 + 1;
+                        margin-bottom: 12px;
+                        input {
+                            background: #2a2a2a;
+                            border: 1px solid #2a2a2a;
+                            color: $color-white-0;
+                            width: 60%;
+                            padding: 6px 0px 5px 5px;
+                            &::placeholder {
+                                @include styleText($color-white-0, $fs-2, $fw-normal);
+                                font-style: italic;
+                            }
+                            &:focus {
+                                outline: none;
+                                border: 1px solid #5c5c5c;
+                            }
+                        }
+                        button {
+                            background: linear-gradient(#242424, #0b0b0b);
+                            border-bottom-color: #0b0b0b;
+                            border-left-color: #2a2a2a;
+                            border-radius: 0;
+                            border-right-color: #0b0b0b;
+                            border-style: solid;
+                            border-top-color: #242424;
+                            border-width: 1px;
+                            padding: 5px 0px 5px 5px;
+                            margin-left: -4px;
+                            width: 30%;
+                            text-align: left;
+                            @include styleText($color-gray-0, $fs-1, $fw-normal);
+                            i {
+                                font-size: $fs-2;
+                                margin-left: $mg-2 - 4;
+                                transition: all 0.5s;
+                                &:hover {
+                                    color: $color-blue-0;
+                                }
+                            }
+                            span {
+                                transition: all 0.5s;
+                            }
+                            &:focus {
+                                outline: none;
+                            }
+                            &:hover {
+                                span {
+                                    color: $color-blue-0;
+                                }
+                            }
+                        }
+                    }
+                    .squaredcheck {
+                        input[type="checkbox"] {
+                            display: none;
+                        }
+                        input[type="checkbox"] + label::before {
+                            display: inline-block;
+                            content: "\2714";
+                            width: 16px;
+                            height: 16px;
+                            line-height: 16px;
+                            padding-left: 2px;
+                            color: transparent;
+                            background: #2e2e2e;
+                        }
+                        input[type="checkbox"]:checked + label::before {
+                            color: $color-white-0;
+                            box-shadow: 0px 0px 3px 1px white;
+                        }
+                        label {
+                            span {
+                                margin-left: 10px;
+                                a {
+                                    color: $color-white-0;
+                                    transition: all 0.5s;
+                                    &:hover {
+                                        text-decoration: none;
+                                        color: $color-blue-0;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .col-12 {
+                    .form {
+                        button {
+                            width: 40%;
+                        }
+                    }
+                }
+               .stay__icon{
+                   .icon__item{
+                       display: inline-block;
+                       margin: 15px 25px;
+                       width: 20px;
+                    a {
+                                
+                        i {
+                            @include styleText($color-gray-0, $fs-2 + 4, $fw-normal);
+                            transition: all 0.5s;
+                            &:hover {
+                                @include styleText($color-blue-0, $fs-2 + 4, $fw-normal);
+                            }
+                        }
+                    }
+                   }
+               }
+            }
+        }
+        .stay__logo{
+            .row{
+                text-align: center;
+                img{
+                    margin: $pd-3 0px;
+                    height: 28px;
+                }
+            }
+        }
+    }
+}
+
+@include responsive("extra-large"){
+    .stay{
+        .stay__content{
+            .stay__contact{
+                .row{
+                    .col-xl-6{
+                        padding: 0;
+                    }
+                    .col-12{
+                        padding: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include responsive("large"){
+    .stay{
+        .stay__content{
+            h3 {
+                @include styleText($color-white-0, $fs-4, $fw-normal);
+            }
+        }
+    }
+}
+
+@include responsive("medium"){
+    .stay{
+        .stay__content{
+            .stay__logo{
+                .row{
+                    img{
+                        margin: 28px 0px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// .animation__stay--scroll{
+//     opacity: 0;
+//     animation-name: trong;
+//     animation-duration: 5s;
+//     animation-timing-function: ease-in-out;
+// }
+// @keyframes trong{
+//     0%{
+//         opacity: 0.3;
+//     }
+//     50%{
+//         opacity: 0.6;
+//     }
+//     100%{
+//         opacity: 1;
+//     }
+// }

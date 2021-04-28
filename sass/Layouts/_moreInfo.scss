@@ -1,0 +1,86 @@
+.moreInfo{
+    .info{
+        @include styleText($color-white-0,$fs-1,$fw-normal);
+        margin: $mg-3 $mg-3;
+        p{
+            margin-bottom: $mg-1;
+        }
+        .info__icon{
+            padding: 30px 0px $pd-1;
+            ul{
+                list-style: none;
+                display: flex;
+                margin-bottom: 0px;
+                li{
+                    display: inline-block;
+                    margin-right: $mg-2;
+                }
+            }
+        }
+    }
+    .moreTopic{
+        margin: $mg-3;
+        margin-bottom: 0px;
+        .topic{
+            margin: 0px;
+            .topic__item{
+                padding: 0px;
+                h2{
+                    font-family: 'Roboto', serif;
+                    @include styleText($color-white-0, $fs-5,$fw-normal);
+                }
+                hr{
+                    height: 1px;
+                    margin: $mg-3 -1px;
+                    display: block;
+                    width: 100%;
+                    background-color: $color-black-2;
+                    border: none;
+                }
+                ul{
+                    list-style: none;
+                    margin-bottom: $mg-1;
+                    li{
+                        a{
+                            @include styleText($color-gray-0, $fs-1,$fw-normal);
+                            text-decoration: none;
+                            line-height: 22px;
+                            transition: all 0.25s;
+                            -moz-transition: all 0.25s;
+                            -o-transition: all 0.25s;
+                            -webkit-transition: all 0.25s;
+                            &:hover{
+                                @include styleText($color-blue-0, $fs-1,$fw-normal);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+    }
+}
+
+@include responsive("large"){
+    .moreInfo{
+        .moreTopic{
+            .topic{
+                .topic__item{
+                    h2{
+                        @include styleText($color-white-0, $fs-4,$fw-normal);
+                    }
+                    ul{
+                        li{
+                            a{
+                                @include styleText($color-gray-0, $fs-1 - 1,$fw-normal);
+                                &:hover{
+                                    @include styleText($color-blue-0, $fs-1 - 1,$fw-normal);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,196 @@
+.header__space{
+    height: 108px; //tạo vùng khoảng trống để chứa header
+    width: 100%;
+}
+.header {
+    position: fixed;
+    height: 108px;
+    z-index: 100;
+    width: 100%;
+    background-color: $color-black-0;
+    transition: all .5s;
+    .header__content {
+        position: relative;
+        .header__brand {
+            .logo {
+                width: 64px;
+                height: 64px;
+                position: absolute;
+                top: 22px;
+                left: 18px;
+                z-index: 10;
+            }
+            .brand {
+                position: absolute;
+                top: 54px;
+                left: 146px;
+                height: 28px;
+                width: 112px;
+            }
+        }
+        .nav__top {
+            position: absolute;
+            top: 5px;
+            right: 18px;
+            ul {
+                display: flex;
+                justify-content: flex-end;
+                margin-bottom: 0px;
+                li {
+                    display: block;
+                    margin: 5px $mg-1;
+                    a {
+                        @include styleText($color-white-0, $fs-1, $fw-normal);
+                        letter-spacing: 1px;
+                        text-decoration: none;
+                        i {
+                            border: 1px solid $color-white-0;
+                            padding: 3px 3px;
+                            font-size: 8px;
+                            text-align: center;
+                        }
+                        &:hover {
+                            @include styleText($color-blue-0, $fs-1, $fw-normal);
+                            i {
+                                border: 1px solid $color-blue-0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .nav__bottom {
+            position: absolute;
+            top: 62px;
+            right: 18px;
+            .navbar {
+                padding: 0px;
+                .navbar-collapse {
+                    justify-content: flex-end;
+                    .navbar-nav {
+                        .nav-item {
+                            margin: 0px $mg-2 - 2;
+                            a.nav-link {
+                                text-decoration: none;
+                                padding: 0px;
+                                letter-spacing: 1px;
+                                @include styleText($color-white-0, $fs-1, $fw-normal);
+                                &:hover {
+                                    @include styleText($color-blue-0, $fs-1, $fw-normal);
+                                }
+                                &.active {
+                                    @include styleText($color-white-0, $fs-1, $fw-normal);
+                                }
+                            }
+                        }
+                    }
+                }
+                .buttonCollapse{
+                    i{
+                        font-size: $fs-2 + 2;
+                        margin-left: $mg-2;
+                        cursor: pointer;
+                    }
+                    &:hover i{
+                        color: $color-blue-1;
+                    }
+                }
+                .searchCollapse{
+                    i{
+                        font-size: $fs-2;
+                        margin-left: $mg-2;
+                        color: $color-white-0;
+                        cursor: pointer;
+                    }
+                    &:hover i{
+                        color: $color-blue-1;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include responsive("extra-large") {
+    .header__space{
+        height: 97px;
+    }
+    .header{
+        height: 97px;
+        .nav__bottom{
+            .navbar-collapse{
+                // display: none;
+                position: fixed;
+                top: 97px;
+                left: 0;
+                width: 100%;
+                height: 0;
+                overflow: hidden;
+                background: $color-black-0;
+                transition: all 0.25s;
+                text-align: center;
+                ul{
+                    padding: 50px 0px;
+                    li{
+                        display: block;
+                        line-height: 62px;
+                        a.nav-link{
+                            font-size: $fs-3!important;
+                        }
+                        &:last-child {
+                            padding-bottom: 50px;
+                        }
+                    }
+                }
+                
+            }
+            .navbar-collapse.show{
+                height: 100vh;
+            }
+        }   
+    }
+}
+
+@include responsive("large") {
+    .header__space{
+        height: 80px;
+    }
+    .header {
+        height: 80px;
+        .header__content {
+            .header__brand {
+                .logo {
+                    width: 44px;
+                    height: 44px;
+                }
+                .brand {
+                    height: 23px;
+                    left: 102px;
+                    top: 36px;
+                    width: 91px;
+                }
+            }
+            .nav__bottom{
+                top: 50px;
+                .navbar-collapse{
+                    top: 80px;
+                }
+            }   
+        }
+    }
+}
+
+@include responsive("medium"){
+    .header{
+        .header__content{
+            .nav__top{
+                ul{
+                    li{
+                        margin: 7px 0px;
+                        margin-left: 14px;
+                    }
+                }
+            }
+        }
+    }
+}

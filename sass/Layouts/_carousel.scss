@@ -1,0 +1,135 @@
+.carousel__home{
+    max-height: 616px;
+    // background: $color-white-0;
+    .carousel{
+        position: relative;
+        .carousel-item{
+            position: relative;
+            .carousel-caption{
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                text-align: left;
+                background-color: $color-trans;
+                width: 100%;
+                margin: 0px 100px;
+                h5{
+                    background-color: $color-trans; 
+                    @include styleText($color-white-0, 42px, $fw-normal);
+                    font-family: serif;
+                    margin: 60px 0px $mg-1;
+                    width: 45%;
+                    
+                    animation-name: animateWord;
+                    animation-duration: 0.8s;
+                    animation-delay: 0.3s;
+                    animation-timing-function: ease-in;
+                }
+                .learnMoreButton{
+                    margin-top: $mg-2 + 5;
+                    animation-name: animateButton;
+                    animation-duration: 1s;
+                    animation-delay: 0.3s;
+                    animation-timing-function: ease-in;
+                }
+            }
+        }
+        .carousel-control-prev, .carousel-control-next{
+            width: 30px;
+            z-index: 10;
+            opacity: 1;
+            height: 40px;
+            position: absolute;
+            top: 50%;
+            left: 50px;
+            transform: translateY(-50%);
+        }
+        .carousel-control-next{
+            left: unset;
+            right: 50px;
+            justify-content: right!important;
+        }
+        .carousel-control-next-icon, .carousel-control-prev-icon{
+            width: 25px;
+            height: 25px;
+        }
+    }
+}
+
+@include responsive("large"){
+    .carousel__home{
+        .carousel{
+            .carousel-item{
+                .carousel-caption{
+                    width: calc(100% - 200px);
+                    margin: 0px auto;
+                    left: 100px;
+                    h5{
+                        @include styleText($color-white-0, $fs-4 + 4, $fw-normal);
+                        margin: 40px 0px $mg-1;
+                    }                  
+                }
+            }            
+        }
+    }
+}
+
+@include responsive("medium"){
+    .carousel__home{
+        height: 550px;
+        background: $color-white-0!important; 
+        .carousel{
+            position: relative;
+            .carousel-item{
+                background: $color-white-0; 
+                .carousel-caption{
+                    width: calc(100% - 60px);
+                    position: unset;  
+                    margin: 0px 30px;
+                    padding: 0px;
+                    padding-bottom: $pd-1;
+                    h5{
+                        width: 100%;
+                        @include styleText($color-black-2, $fs-4 + 4, $fw-normal);
+                        margin: 40px 0px $mg-1;
+                    }        
+                }
+            } 
+            .carousel-control-prev, .carousel-control-next{
+                top: 25%;
+                transform: translateY(-25%);
+            }
+
+        }
+    }
+}
+
+@include keyframes(animateWord){
+    0% {
+        transform: translateY(0px);
+        opacity: 0;
+    }
+    10% {
+        transform: translateY(-80px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@include keyframes(animateButton){
+    0% {
+        transform: translateY(0px);
+        opacity: 0;
+    }
+    60% {
+        transform: translateY(-40px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}

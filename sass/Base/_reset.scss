@@ -1,0 +1,13 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    position: relative;
+}
+
+html,body{
+    font-family: 'Roboto', sans-serif;
+    @include styleText($color-white-0,$fs-1,$fw-normal);
+    background-color: $color-black-0;
+    scroll-behavior: smooth;
+}

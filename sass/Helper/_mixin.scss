@@ -1,0 +1,46 @@
+@mixin styleText($color, $fs, $fw) {
+    color: $color;
+    font-size: $fs;
+    font-weight: $fw;
+}
+
+@mixin styleButton($bg-color, $border, $pd-y, $pd-x, $radius) {
+    background-color: $bg-color;
+    border: 1px solid $border;
+    padding: $pd-y $pd-x;
+    border-radius: $radius;
+}
+
+@mixin styleHoverButton($color, $border, $bg-color) {
+    color: $color;
+    border-color: $border;
+    background-color: $bg-color;
+}
+// screen là tên màn hình
+// map là tên mảng
+@mixin responsive($screen) {
+    @if(map-has-key($map:$breakpoints , $key:$screen )) {
+        $value: map-get($map:$breakpoints , $key:$screen );
+
+        //cú pháp responsive CSS3
+        @media screen and (max-width:$value) {
+            @content;
+        }
+    }@else{
+        @warn "khong tim thay";
+    }
+}
+
+@mixin keyframes($name) {
+    @-webkit-keyframes #{$name} {
+      @content;
+    }
+  
+    @-moz-keyframes #{$name} {
+      @content;
+    }
+  
+    @keyframes #{$name} {
+      @content;
+    }
+  }
